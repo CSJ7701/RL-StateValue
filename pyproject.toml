@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "rl-statevalue"
+version = "0.1.0"
+description = "An exploration of State and Action Value Functions in Reinforcement Learning"
+authors = ["Christian Johnson <c.ship.johnson@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
