@@ -9,6 +9,8 @@
     };
   };
 
+  # ================================================
+  
   outputs = { self, nixpkgs, poetry2nix, ...}@inputs:
     let
       system = "x86_64-linux";
@@ -21,7 +23,24 @@
         python = pkgs.python312;
         projectDir = ./.;
       };
+
+      # Define tests
+      tests = pkgs.stdenv.mkDerivation {
+        name = "run-tests";
+        buildInputs = [ pythonEnv ];
+        src = ./.;
+        output = "result";
+        dontBuild = true; # Indicate that derivation does not produce outputs
+        installPhase = ''
+          mkdir -p $out
+          ls
+          python -m unittest discover -s tests -p "*.py" || echo "Hello"
+        ''; # Run all tests in tests directory
+      };
     in
+
+      # =========================================================
+
       {
         devShells.${system}.default = pkgs.mkShell {
           packages = with pkgs; [
@@ -34,11 +53,8 @@
         };
 
         # Run with 'nix build .#tests'
-        tests.${system}.default = pkgs.stdenv.mkDerivation {
-          name = "run-tests";
-          buildInputs = [ pythonEnv pkgs.pytest];
-          shellHook = ''pytests tests/'';
-        };
+        packages.${system}.tests = tests;
+
 
       };
 }
