@@ -28,10 +28,17 @@
             pythonEnv
             poetry
           ];
-
           shellHook = ''
-            python tests.py
+          fish
           '';
         };
+
+        # Run with 'nix build .#tests'
+        tests.${system}.default = pkgs.stdenv.mkDerivation {
+          name = "run-tests";
+          buildInputs = [ pythonEnv pkgs.pytest];
+          shellHook = ''pytests tests/'';
+        };
+
       };
 }
