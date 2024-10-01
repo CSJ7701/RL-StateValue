@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from src.Grid import Grid
+from rl_statevalue.Grid import Grid
 
 class TestGrid(unittest.TestCase):
     def test_grid_initialization(self):

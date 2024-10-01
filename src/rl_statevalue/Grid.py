@@ -18,4 +18,3 @@ class Grid:
     def initGrid(self) -> np.ndarray:
         dim = self.DIMENSION;
         return np.zeros((dim,dim))
-        
