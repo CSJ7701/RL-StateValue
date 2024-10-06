@@ -37,7 +37,10 @@
                 poetry
               ];
               inputsFrom = [ pkgs.myapp ];
-              shellHook = ''fish'';
+              shellHook = ''
+              export PYTHONPATH=${self}/src:$PYTHONPATH
+              fish
+              '';
             };
 
             poetry = pkgs.mkShell {
@@ -45,8 +48,11 @@
             };
 
             test = pkgs.mkShell {
-              inputsFrom = [pkgs.myapp ];
-              shellHook = ''python -m unittest discover -s tests -p "*.py" && exit'';
+              inputsFrom = [ pkgs.myapp ];
+              shellHook = ''
+              export PYTHONPATH=${self}/src:$PYTHONPATH
+              python -m unittest discover -s tests -p "*.py"
+              '';
             };
 
           };

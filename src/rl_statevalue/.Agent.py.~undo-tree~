@@ -1,5 +1,5 @@
 (undo-tree-save-format-version . 1)
-"d0321a7c49ef06dd1a7d5ad47de1e4c2eb8169b5"
+"a786d7c1dc367ce76f846d2f4f3b319baeb39bb0"
 [nil nil nil nil (26363 60708 211597 631000) 0 nil]
 ([nil nil ((398 . 414) (t 26363 58382 705875 872000)) nil (26363 60708 211596 588000) 0 nil])
 ([nil nil ((414 . 415)) nil (26363 60708 211594 880000) 0 nil])
@@ -391,5 +391,11 @@ nil
 ([nil nil ((402 . 414)) nil (26363 64295 304668 832000) 0 nil])
 ([nil nil ((374 . 381)) nil (26363 64295 304664 822000) 0 nil])
 ([nil nil ((apply -4 1379 1519 undo--wrap-and-run-primitive-undo 1379 1519 ((1481 . 1483) (1387 . 1389) 1514))) nil (26364 59 640872 214000) 0 nil])
-([nil current ((1340 . 1342) (t 26364 59 764848 303000)) nil (26364 91 277986 368000) 0 nil])
+([nil nil ((1340 . 1342) (t 26364 59 764848 303000)) nil (26364 91 277986 368000) 0 nil])
+([nil nil ((#("
+        # print(f\"Direction: {direction.name} X:{direction.value[1]} Y:{direction.value[0]}\")
+        # print(f\"Location: {self.position}\")
+" 0 9 (fontified t) 9 95 (face font-lock-comment-face fontified t) 95 103 (fontified t) 103 121 (face font-lock-comment-face fontified t) 121 141 (face font-lock-comment-face fontified t)) . 1380) (undo-tree-id4 . -141) (undo-tree-id5 . -141) (undo-tree-id6 . -141) (t 26366 45608 6331 653000)) nil (26368 21948 561252 507000) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t)) . -1379) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 1380) nil (26368 21948 561246 526000) 0 nil])
 nil

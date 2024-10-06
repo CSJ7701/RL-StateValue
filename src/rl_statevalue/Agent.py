@@ -34,10 +34,6 @@ class Agent:
         except ValueError as e:
             print(f"\n[ERROR] Invalid move location.\n{e}")
 
-        # print(f"Direction: {direction.name} X:{direction.value[1]} Y:{direction.value[0]}")
-        # print(f"Location: {self.position}")
-
-
     def checkMove(self, position: tuple[int,int]) -> None:
         availableSpace: tuple[int,int] = self.environment.coords.shape
         yCoord = position[0]
