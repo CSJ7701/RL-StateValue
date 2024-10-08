@@ -1,5 +1,6 @@
 import numpy as np
 from rl_statevalue.Direction import Direction
+from pprint import pprint
 
 class Grid:
     def __init__(self, dim: int):
@@ -25,13 +26,29 @@ class Grid:
         print(self.rewards)
         print()
         print("=== Policy Values ===")
-        print(self.policy)
+        # Loop through rows
+        for i in range(self.DIMENSION):
+            row_output = ""
+            # Loop through columns in the row
+            for j in range(self.DIMENSION):
+                # Extract the policy dictionary for the current cell
+                policy_dict = self.policy[i][j]
+                
+                # Create a compact string to represent the policy, for example: "N:0.5 S:1.0 E:0.75 W:0.25"
+                policy_str = " ".join([f"{action[0]}:{value:.2f}" for action, value in policy_dict.items()])
+                
+                # Add the policy string to the row output, formatted nicely
+                row_output += f"| {policy_str} |".center(40)  # Adjust width for alignment
+                
+            # Print the row
+            print(row_output)
+            print()  # Empty line between rows for readability
 
     def initGrid(self) -> np.ndarray:
         dim = self.DIMENSION;
         return np.zeros((dim,dim))
 
-    def setRewards(self, reward_values: np.ndarray) -> None:
+    def setRewardsManual(self, reward_values: np.ndarray) -> None:
         """Sets rewards on the grid. Expects a 2D numpy array of shape (DIMENSION, DIMENSION)."""
         if self.rewards_set:
             raise RuntimeError("[ERROR]: Reward values have already been set for this instance.")
@@ -43,6 +60,29 @@ class Grid:
 
         self.rewards = reward_values
         self.rewards_set = True
+
+    def setRewards(self, goal: tuple[int, int], goal_value: int, default: int = 0) -> None:
+        """
+        Sets up the reward matrix for the grid.
+
+        Parameters:
+        - goal: a tuple representing the coordinates of the goal (e.g., (x, y)).
+        - goal_value: an integer representing the reward value at the goal.
+        - default: an integer representing the default reward for all other cells (default is 0).
+        """
+        if self.rewards_set:
+            raise RuntimeError("Rewards have already been set. Cannot reset rewards.")
+
+        # Set the goal coordinate and the reward matrix
+        self.Goal = goal
+        self.rewards = np.full((self.DIMENSION, self.DIMENSION), default)
+    
+        # Set the goal value at the specified coordinates
+        self.rewards[goal[0], goal[1]] = goal_value
+    
+        # Mark rewards as set
+        self.rewards_set = True
+
 
     def updateStates(self, state_values: np.ndarray):
         """Updates the states on the grid. Expects a 2D numpy array of shape (DIMENSION, DIMENSION)."""
