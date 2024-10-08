@@ -1,5 +1,5 @@
 (undo-tree-save-format-version . 1)
-"a786d7c1dc367ce76f846d2f4f3b319baeb39bb0"
+"de4f7b9f2289f4e9fc89d7a6ab660fd5e0fc3d62"
 [nil nil nil nil (26363 60708 211597 631000) 0 nil]
 ([nil nil ((398 . 414) (t 26363 58382 705875 872000)) nil (26363 60708 211596 588000) 0 nil])
 ([nil nil ((414 . 415)) nil (26363 60708 211594 880000) 0 nil])
@@ -396,6 +396,27 @@ nil
         # print(f\"Direction: {direction.name} X:{direction.value[1]} Y:{direction.value[0]}\")
         # print(f\"Location: {self.position}\")
 " 0 9 (fontified t) 9 95 (face font-lock-comment-face fontified t) 95 103 (fontified t) 103 121 (face font-lock-comment-face fontified t) 121 141 (face font-lock-comment-face fontified t)) . 1380) (undo-tree-id4 . -141) (undo-tree-id5 . -141) (undo-tree-id6 . -141) (t 26366 45608 6331 653000)) nil (26368 21948 561252 507000) 0 nil])
-([nil current ((#("
+([nil nil ((#("
 " 0 1 (fontified t)) . -1379) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 1380) nil (26368 21948 561246 526000) 0 nil])
+([nil nil ((#("class Direction(Enum):
+    S = (1,0)
+    N = (-1,0)
+    E = (0,1)
+    W = (0,-1)
+" 0 5 (face py-def-class-face fontified t) 5 6 (fontified t) 6 15 (face py-class-name-face fontified t) 15 16 (face (rainbow-delimiters-depth-1-face) fontified t) 16 20 (fontified t) 20 21 (face (rainbow-delimiters-depth-1-face) fontified t) 21 27 (fontified t) 27 28 (face py-variable-name-face fontified t) 28 29 (fontified t) 29 30 (face font-lock-operator-face fontified t) 30 31 (fontified t) 31 32 (face (rainbow-delimiters-depth-1-face) fontified t) 32 33 (face py-number-face fontified t) 33 34 (fontified t) 34 35 (face py-number-face fontified t) 35 36 (face (rainbow-delimiters-depth-1-face) fontified t) 36 41 (fontified t) 41 42 (face py-variable-name-face fontified t) 42 43 (fontified t) 43 44 (face font-lock-operator-face fontified t) 44 45 (fontified t) 45 46 (face (rainbow-delimiters-depth-1-face) fontified t) 46 47 (fontified t) 47 48 (face py-number-face fontified t) 48 49 (fontified t) 49 50 (face py-number-face fontified t) 50 51 (face (rainbow-delimiters-depth-1-face) fontified t) 51 56 (fontified t) 56 57 (face py-variable-name-face fontified t) 57 58 (fontified t) 58 59 (face font-lock-operator-face fontified t) 59 60 (fontified t) 60 61 (face (rainbow-delimiters-depth-1-face) fontified t) 61 62 (face py-number-face fontified t) 62 63 (fontified t) 63 64 (face py-number-face fontified t) 64 65 (face (rainbow-delimiters-depth-1-face) fontified t) 65 70 (fontified t) 70 71 (face py-variable-name-face fontified t) 71 72 (fontified t) 72 73 (face font-lock-operator-face fontified t) 73 74 (fontified t) 74 75 (face (rainbow-delimiters-depth-1-face) fontified t) 75 76 (face py-number-face fontified t) 76 78 (fontified t) 78 79 (face py-number-face fontified t) 79 80 (face (rainbow-delimiters-depth-1-face) fontified t) 80 81 (fontified t)) . 74) (undo-tree-id31 . -81) 155 (t 26371 56405 837782 941000)) nil (26372 27670 149829 110000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . -73) (undo-tree-id28 . -1) (undo-tree-id29 . -1) (undo-tree-id30 . -1) 74) nil (26372 27670 149827 597000) 0 nil])
+([nil nil ((73 . 92)) nil (26372 27670 149825 991000) 0 nil])
+([nil nil ((#("." 0 1 (fontified t)) . -91) (undo-tree-id25 . -1) (undo-tree-id26 . -1) (undo-tree-id27 . -1) 92) nil (26372 27670 149825 363000) 0 nil])
+([nil nil ((91 . 99)) nil (26372 27670 149823 538000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . 98) (undo-tree-id24 . -1) 99) nil (26372 27670 149822 678000) 0 nil])
+([nil nil ((#("i" 0 1 (fontified t)) . -92) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (#("m" 0 1 (fontified t)) . -93) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (#("p" 0 1 (fontified t)) . -94) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (#("o" 0 1 (fontified t)) . -95) (undo-tree-id15 . -1) (undo-tree-id16 . -1) (undo-tree-id17 . -1) (#("r" 0 1 (fontified t)) . -96) (undo-tree-id18 . -1) (undo-tree-id19 . -1) (undo-tree-id20 . -1) (#("t" 0 1 (face py-import-from-face fontified t)) . -97) (undo-tree-id21 . -1) (undo-tree-id22 . -1) (undo-tree-id23 . -1) 98) nil (26372 27670 149819 731000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . 91) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) 92) nil (26372 27670 149810 380000) 0 nil])
+([nil nil ((91 . 97)) nil (26372 27670 149808 263000) 0 nil])
+([nil nil ((92 . 101) (#("Di" 0 2 (fontified nil)) . -92) (92 . 94) (#("Direction" 0 9 (fontified nil)) . -92) (92 . 101) (#("Direc" 0 5 (fontified t)) . -92) (undo-tree-id0 . -5) (undo-tree-id1 . -5) (undo-tree-id2 . -5) 97) nil (26372 27670 149806 461000) 0 nil])
+([nil nil ((101 . 118)) nil (26372 27670 149781 184000) 0 nil])
+([nil nil ((#("from enum import Enum" 0 4 (face py-import-from-face fontified t) 4 10 (fontified t) 10 16 (face py-import-from-face fontified t) 16 21 (fontified t)) . 1) (t 26372 27670 272253 238000)) nil (26372 27694 196532 791000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 1)) nil (26372 27694 196530 707000) 0 nil])
+([nil current ((97 . 98)) nil (26372 27694 196525 934000) 0 nil])
 nil

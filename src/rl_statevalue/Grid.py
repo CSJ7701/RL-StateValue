@@ -1,4 +1,5 @@
 import numpy as np
+from rl_statevalue.Direction import Direction
 
 class Grid:
     def __init__(self, dim: int):
@@ -9,6 +10,9 @@ class Grid:
         self.states = self.initGrid()
         self.rewards = self.initGrid()
         self.rewards_set = False
+
+        # Initialize policy as a DIMENSION by DIMENSION grid of dictionaries
+        self.policy = [[{action.name: (1/len(Direction)) for action in Direction} for _ in range(self.DIMENSION)] for _ in range(self.DIMENSION)]
         
     def print(self) -> None:
         print("=== Current Grid ===")
@@ -19,6 +23,9 @@ class Grid:
         print()
         print("=== Reward Values ===")
         print(self.rewards)
+        print()
+        print("=== Policy Values ===")
+        print(self.policy)
 
     def initGrid(self) -> np.ndarray:
         dim = self.DIMENSION;

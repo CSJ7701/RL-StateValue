@@ -1,12 +1,6 @@
-from enum import Enum
 import numpy as np
 from rl_statevalue import Grid
-
-class Direction(Enum):
-    S = (1,0)
-    N = (-1,0)
-    E = (0,1)
-    W = (0,-1)
+from rl_statevalue.Direction import Direction
 
 class Agent:
     def __init__(self, environment: Grid.Grid):
