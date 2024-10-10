@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "An exploration of State and Action Value Functions in Reinforcement Learning"
 authors = ["Christian Johnson <c.ship.johnson@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "rl_statevalue", from = "src" }]
+# packages = [{ include = "rl_statevalue", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"

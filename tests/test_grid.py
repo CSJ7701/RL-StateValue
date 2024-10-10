@@ -1,5 +1,8 @@
 import unittest
 import numpy as np
+import sys
+
+sys.path.append('..')
 from rl_statevalue.Grid import Grid
 
 class TestGrid(unittest.TestCase):
