@@ -45,7 +45,7 @@ class Brain():
                 print(f"[LOG] State Value for {current_position} = {total_state_value} = {sum(total_state_value)}")
         self.Grid.states = new_state_values
         # State value for the goal should always be 0.
-        self.Grid.states[self.Grid.Goal[0], self.Grid.Goal[1]] = 0
+        # self.Grid.states[self.Grid.Goal[0], self.Grid.Goal[1]] = 0
             
 
     def getNextState(self, position: tuple[int,int], action: Direction) -> tuple[int, int]:
@@ -72,7 +72,8 @@ class Brain():
         return self.Grid.policy[i][j][action.name]
 
 
-
+    ### Need to fix this. i,j should be to self.Grid.DIMENSION, not DIMENSION-1.
+    ### This means I need to update the code inside, to handle coordinates outside the respective grids.
     def updatePolicy(self) -> None:
         """Update the policy for each state."""
         for i in range(self.Grid.DIMENSION-1):
@@ -94,18 +95,21 @@ class Brain():
 
 
 if __name__ == "__main__":
-    test_grid = Grid(2)
+    test_grid = Grid(3)
     test_agent = Agent(test_grid)
-    test_grid.setRewards((0,1), 5, 0)
-    # test_grid.setRewards((1,1), 5)
+    # test_grid.setRewards((0,1), 5, 0)
+    test_grid.setRewards((1,1), 5)
 
-    #test_grid.setRewardsManual(np.array([[0,5],[0,0]]))
+    # test_grid.setRewardsManual(np.array([[0,5],[0,0]]))
     # test_grid.setRewardsManual(np.array([[0,0,0],[0,5,0],[0,0,0]]))
 
     test_brain = Brain(test_agent, test_grid)
-
-    test_brain.updateStateValues()
-    test_brain.updatePolicy()
+    index = 0
+    # How many times do you want to update your state/policy values?
+    while index < 1:
+        test_brain.updateStateValues()
+        test_brain.updatePolicy()
+        index=index+1
     test_grid.print()
     # test_brain.updateStateValues()
     # test_brain.updatePolicy()
